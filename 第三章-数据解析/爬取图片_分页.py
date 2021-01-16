@@ -7,12 +7,13 @@ import os
 
 if __name__ == '__main__':
     if not os.path.exists('./qiutu_Images'):
-        os.mkdir('./qiutuImgs')
+        os.mkdir('qiutuImgs')
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36"
     }
-    for page in range(1, 35):
-        url = 'https://www.qiushibaike.com/imgrank/page/' + str(page)
+    for page in range(1, 3):
+        url = 'https://www.qiushibaike.com/imgrank/page/%d'
+        new_url = format(url%page)
         response = requests.get(url=url, headers=headers)
         pageText = response.text
         ex = '<div class="thumb">.*?<img src="(.*?)" alt.*?</div>'

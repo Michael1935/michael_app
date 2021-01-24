@@ -22,6 +22,10 @@ bs4 数据解析的原理
 
 ### 获取标签之间的文本数据
 - soup.a.text/string/get_text()
+- text/get_text() 可以获取某一个标签中所有的文本内容
+- string 只可以获取该标签下面直系的文本内容
 ### 获取标签中属性值
+- soup.a['href']
+
 
 

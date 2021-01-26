@@ -6,15 +6,16 @@ from settings import Settings
 def run_game():
     # 初始化游戏并创建一个屏幕对象
     pygame.init()
-    screen = pygame.display.set_mode((1200, 800))
+    ai_setting = Settings()
+    screen = pygame.display.set_mode(
+        (ai_setting.screen_width, ai_setting.screen_height)
+    )
     pygame.display.set_caption('Alien Invasion')
     # 设置背景色
-    bg_color = (230, 230, 230)
-
     # 开始游戏的主循环
     while True:
         # 监视键盘和鼠标
-        screen.fill(bg_color)
+        screen.fill(ai_setting.bg_color)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit()
